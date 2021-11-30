@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include<sys/time.h>
-#include<algorithm>
 using namespace std;
 
 int main(void){
