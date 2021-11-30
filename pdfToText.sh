@@ -1,16 +1,14 @@
 #!/bin/bash
 
-if [ ! -d "Text" ] 
+if [ ! -d "TEXT" ] 
 then
-    $(mkdir Textfile)
+    $(mkdir TEXT)
 fi
 
-for fich in $(find -name "*.pdf")
+
+for fich in $(find $1 -name "*.pdf" | cut -d"/" -f2)
 do
-    $(pdftotext $fich)
+    txt=$(echo $fich | cut -d"." -f1)".txt"
+    $(pdf2txt -A -t "text" $1/$fich -o TEXT/$txt)
 done
 
-for fich in $(find -name "*.txt")
-do
-    $(mv $fich Textfile/)
-done
