@@ -62,10 +62,11 @@ while(getline(inFile, ligne)){
 
 }
 if(outFile.is_open()) {
+     outFile << "Boudin-Torres-2006.html"<<endl;
      outFile << title <<endl;
      outFile << result;
 }
 
+inFile.close();
 outFile.close();
-
 }
